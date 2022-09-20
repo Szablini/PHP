@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<body style="background-color: cornflowerblue; font-family: Verdana, Geneva, Tahoma, sans-serif; color: white;">
+    
+<?php
+
+$liczba1 = $_POST['a'];
+$liczba2 = $_POST['b'];
+$liczba3 = $_POST['c'];
+$suma = $liczba1 + $liczba2;
+$roznica = $liczba1 - $liczba2;
+$iloczyn = $liczba1*$liczba2;
+$iloraz = $liczba1/$liczba2;
+$modulo = $liczba1%$liczba2;
+
+echo ("Suma liczb: ".$liczba1." i ".$liczba2. " wynosi: ".$suma);
+echo("<br> <br/>");
+echo ("Różnica liczb: ".$liczba1." i ".$liczba2. " wynosi: ".$roznica);
+echo("<br> <br/>");
+echo ("Iloczyn liczb: ".$liczba1." i ".$liczba2. " wynosi: ".$iloczyn);
+echo("<br> <br/>");
+echo ("Iloraz liczb: ".$liczba1." i ".$liczba2. " wynosi: ".$iloraz);
+echo("<br> <br/>");
+echo ("Modulo liczb: ".$liczba1." i ".$liczba2. " wynosi: ".$modulo);
+echo("<br> <br/>");
+
+echo("Liczby od ".$liczba1." do ".$liczba2. " to: ");
+echo("<br> <br/>");
+
+for ($i=$liczba1;$i<=$liczba2;$i++)
+if ($i%$liczba3==0)
+{
+    echo($i." ");
+}
+
+$text1 = $_POST['d'];
+$text2 = $_POST['e'];
+
+echo("<br> <br/>");
+echo("Nazywam się".$text1." ".$text2. ".");
+
+
+
+
+
+
+?>
+
+</body>
+</html>
+
+
+
+// DRUGI PLIK
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1> Kalkulator </h1>
+<form action="kalkulator.php" method="post">
+Podaj początek:
+<input type="text" name="a"/>
+<br> <br/>
+Podaj koniec:
+<input type="text" name="b"/>
+<br> <br />
+Podaj skok:
+<input type="text" name="c"/>
+<br> <br/>
+Podaj imię:
+<input type="text" name="d"/>
+<br> <br/>
+Podaj nazwisko:
+<input type="text" name="e"/>
+<br> <br/>
+
+<input type="submit" value="Oblicz" />
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
