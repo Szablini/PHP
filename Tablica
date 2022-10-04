@@ -8,12 +8,76 @@
 </head>
 <body>
     <?php
+
+    /*
+
     $kolory = array("czerwony", "zielony", "niebieski");
     $liczby = array(1, 2, 3);
     $mix = array("żółty", 5, 10, "pomarańczowy");
     echo $kolory[0].", ".$kolory[1].", ".$kolory[2]."<br>";
     echo $kolory[0].", ".$kolory[1].", ".$kolory[2]."<br>";
     echo $mix[0].", ".$mix[1].", ".$mix[2].", ".$mix[3];
+
+    
+    for ($i = 0; $i < 10; $i++)
+    {
+        $tablica[$i] = rand (1, 100);
+        echo $tablica[$i]." ";
+    }
+
+    sort($tablica);
+    echo "<br> <br> Tablica posortowana rosnąco: <br>";
+    for ($i = 0; $i < 10; $i++)
+    {
+        echo $tablica[$i]." ";
+    }
+
+    rsort ($tablica);
+    echo "<br> <br> Tablica posortowana malejąco: <br>";
+    for ($i = 0; $i < 10; $i++)
+    {
+        echo $tablica[$i]." ";
+    }
+
+    $kolory = array
+    (
+        "kolor1" => "czerwony",
+        "kolor2" => "zielony",
+        "kolor3" => "niebieski",
+    );
+    echo "Zawartość tablicy: <br>";
+    echo $kolory['kolor1'].", ".$kolory['kolor2'].", ".
+    $kolory["kolor3"];
+
+    $kolory['kolor1'] = "czerwony";
+    $kolory['kolor2'] = "zielony";
+    $kolory['kolor3'] = "niebieski";
+    echo "Zawartość tablicy: <br>";
+    foreach($kolory as $klucz => $kolor) {
+        echo "kolory['klucz'] = $kolor";
+        echo "<br>";
+    }
+
+
+    $tablica = array(6, 7, 0, 2, 5, 9, 6, 0, 1);
+    echo "Zawartość tablicy: <br>";
+    foreach ($tablica as $wartosc) 
+    {
+        echo "$wartosc ";
+    }
+
+    */
+
+    $tablica = array (6, 7, 0, 2, 5, 9, 6, 0, 1, 1, 7, 7, 9);
+    $rozmiar = count ($tablica);
+    echo "Rozmiar tablicy: ".$rozmiar;
+    echo "<br> Ile razy dana wartość występuje w tablicy: 
+    <br>";
+    $ile_razy = array_count_values($tablica);
+    foreach ($ile_razy as $klucz => $wartosc)
+    {
+        echo "[$klucz] => $wartosc <br>";
+    }
+
     ?>
 </body>
-</html>
