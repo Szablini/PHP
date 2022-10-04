@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+    $kolory = array("czerwony", "zielony", "niebieski");
+    $liczby = array(1, 2, 3);
+    $mix = array("żółty", 5, 10, "pomarańczowy");
+    echo $kolory[0].", ".$kolory[1].", ".$kolory[2]."<br>";
+    echo $kolory[0].", ".$kolory[1].", ".$kolory[2]."<br>";
+    echo $mix[0].", ".$mix[1].", ".$mix[2].", ".$mix[3];
+    ?>
+</body>
+</html>
