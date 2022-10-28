@@ -1,0 +1,24 @@
+<?php
+function napis()
+{
+    print ("Ten napis jest wyświetlony z wnętrza funkcji.");
+}
+napis();
+
+function wyswietl_wartosc($wartosc)
+{
+    print ($wartosc);
+}
+print("<br>");
+wyswietl_wartosc(123);
+wyswietl_wartosc("<br>");
+wyswietl_wartosc("Przykładowy napis");
+
+function pogrubienie($lancuch)
+{
+    return "<b>".$lancuch."</b>";
+}
+print("<br>");
+print("To jest zwykły tekst <br>");
+print pogrubienie ("A to jest tekst pogrubiony.");
+?>    
