@@ -1,0 +1,40 @@
+<?php
+
+/*
+echo time();
+echo "<br";
+echo mktime (15, 20, 0, 5, 12, 2010);
+echo "<br>";
+echo microtime();
+echo "<br>";
+*/
+
+$dzien = 30;
+$miesiac = 3;
+$rok = 2019;
+
+if (checkdate($miesiac, $dzien, $rok))
+echo "Poprawna data";
+else echo "Niepoprawna data";
+
+$teraz = new DateTime(date('Y-m-d'));
+$koniec = new DateTime('2022-10-07');
+$roznica = $teraz->diff($koniec);
+echo '<br>';
+echo $roznica->format('%m miesięcy %d dni');
+echo '<br>';
+echo $roznica -> format ('%a dni');
+
+if (!($plik = fopen('test.txt', 'r')))
+{
+    echo "Nie mogę otworzyć pliku test.txt";
+}
+else
+{
+    while (!feof($plik)) {
+        $str = fgets($plik);
+        echo n12br($str);
+    }
+    fclose($plik);
+}
+?>
