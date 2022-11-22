@@ -1,0 +1,68 @@
+/ OBSŁUGA ZDARZENIA
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action = 'tworzenietabeli.php' method='post'>Wykonaj zapytanie
+    <input type="text" name="tabela"/>
+    <br/>
+    <br/>
+    <br/>
+    <input type="submit" value="Wykonaj zapytanie"/>
+</body>
+</html>
+
+/ TWORZENIE TABELI
+
+<?php
+if (isset($_POST['tabela']))
+{
+    $tabela = $_POST ['tabela'];
+    $polaczenie = @mysqli_connect("localhost", "root", "", "rezerwacja1")
+    or die ("nie połączono");
+    $zapytanie = "$tabela";
+
+    $wynik=@mysqli_query($polaczenie, $zapytanie) or die ("nie dodano rekordu");
+    mysqli_close ($polaczenie);
+    // header ('location: wypisz.php')
+
+    print ("Dane poprawnie dodane do bazy");
+}
+else
+{
+    header ('location: tworzenietabeli.html');
+}
+
+/ ??
+
+<?php
+$connection = @mysqli_connect("localhost", "root", "", "rezerwacja1") or die ("Brak połączenia");
+$zapytanie = "SELECT * FROM pasazer;";
+$wynik = @mysqli_query($connection, $zapytanie) or die ("Brak takich rekordów.");
+echo ("<table>");
+
+while ($wiersz=@mysqli_fetch_row($wynik)) {
+
+    echo ('<tr>');
+    for ($i=0; $i<count($wiersz);$i++)
+{
+    echo ('<td>'.$wiersz[$i].'</td>');
+}
+echo ('<tr>');
+}
+echo ("</table>");
+
+// POLECENIE
+CREATE TABLE pasazer
+(
+id_pasazera INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+imie VARCHAR(30),
+nazwisko VARCHAR(30),
+kraj VARCHAR(30)
+);
